@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Skills I'm Developing</title>
+ <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ <header>
+ <h1>Welcome to My Personal Website</h1>
+ </header>
+ <nav>
+ <ul>
+ <li><a href="index.html">HOME</a></li>
+ <li class="dropdown">
+ <a href="#" class="dropbtn">ABOUT</a>
+ <div class="dropdown-content">
+ <a href="skills.html">Skills I'm Developing</a>
+ <a href="goals.html">My Goals as a Student</a>
+ <a href="funfacts.html">Fun Facts About Me</a>
+ </div>
+ </li>
+ <li><a href="gallery.html">GALLERY</a></li>
+ <li><a href="contact.html">CONTACT</a></li>
+ <a href="javascript:void(0);" class="logout-button" onclick="confirmLogout()">LOG 
+OUT</a>
+ </ul>
+ </nav>
+ <section id="section2"></section>
+ <section id="drop">
+ <h2>Skills I'm Developing</h2>
+ <p>As a student, Being a student is not just about earning high grades or finishing school requirements. It is a journey of growth, where I learn more than just lessons from textbooks—it is where I build the foundation for who I want to become in the future. As I pursue my studies, especially in the field of Information Technology, I am developing different kinds of skills that will help me succeed not only in school but also in my future career and daily life.</p>
+ 
+ <section id="skills">
+ 
+ <div class="tab">
+ <button class="tablinks" onclick="openTab(event, 'IT')">Information 
+Technology</button>
+ <button class="tablinks" onclick="openTab(event, 'GraphicDesign')">Graphic 
+Design</button>
+ <button class="tablinks" onclick="openTab(event, 'PublicSpeaking')">Public 
+Speaking</button>
+ <button class="tablinks" onclick="openTab(event, 'ProblemSolving')">Problem 
+Solving</button>
+ </div>
+ 
+ <div id="IT" class="tabcontent">
+ <h3>Information Technology</h3>
+ <ul>
+ <li> Computer Literacy — Understanding how technology works <strong>HTML, CSS, and 
+JavaScript</strong></li>
+ <li>File Management<strong> Organizing files and folders properly</stron></li>
+ <li> Creating modern and accessible web interfaces</li>
+ </ul>
+ </div>
+ 
+ <div id="GraphicDesign" class="tabcontent" style="display:none;">
+ <h3>Graphic Design</h3>
+ <ul>
+   <li> Design Principles<strong> Balance, contrast, alignment, repetition, and hierarchy</strong></li>
+ <li> Color Theory — Choosing harmonious colors, understanding moods, and accessibility</li>
+ <li>Layout & Composition — Organizing elements for clear, beautiful designs</li>
+ </ul>
+ </div>
+ <div id="PublicSpeaking" class="tabcontent" style="display:none;">
+ <h3>Public Speaking</h3>
+ <ul>
+ <li> Confidence — Overcoming nervousness and speaking with self-assurance</li>
+ <li>Clear Communication — Expressing ideas simply so others can understand easily</li>
+ <li>Body Language — Using eye contact, gestures, and posture effectively
+ </li>
+  <li>Active Listening — Understanding others before responding</li>
+ </ul>
+ </div>
+ <div id="ProblemSolving" class="tabcontent" style="display:none;">
+ <h3>Problem Solving and Critical Thinking</h3>
+ <ul>
+ <li> Identifying Problems — Understanding exactly what the issue is before trying to fix it
+</li>
+ <li> Thinking Critically — Looking at facts and details instead of guessing
+</li>
+ <li> Finding Solutions — Thinking of more than one way to solve a problem</li> 
+ </ul>
+ </div>
+ </section>
+ </section>
+ <footer>
+ <p>&copy; 2024 Precios Mae Magno. All rights reserved.</p>
+ </footer>
+ <div class="footer-divider"></div> <!-- Orange line -->
+<script>
+function openTab(evt, tabName) {
+ // Get all tab content elements
+ const tabcontents = document.getElementsByClassName("tabcontent");
+ // Hide all tab content
+ for (let i = 0; i < tabcontents.length; i++) {
+ tabcontents[i].style.display = "none";
+ }
+ // Remove "active" class from all tab links
+ const tablinks = document.getElementsByClassName("tablinks");
+ for (let i = 0; i < tablinks.length; i++) {
+ tablinks[i].classList.remove("active");
+ }
+ // Show the current tab
+ document.getElementById(tabName).style.display = "block";
+ evt.currentTarget.classList.add("active");
+}
+// Initially show the first tab content
+document.addEventListener("DOMContentLoaded", function() {
+ document.querySelector('.tablinks').click(); // Simulates a click on the first tab
+});
+</script>
+<script>
+ // Logout function with confirmation
+ function confirmLogout() {
+ // Show a confirmation message to the user
+ const confirmLogout = confirm("Are you sure you want to log out?");
+ 
+ // If the user confirms, proceed with logging out
+ if (confirmLogout) {
+ // Mark the user as logged out in localStorage (if used)
+   localStorage.removeItem('isLoggedIn'); // Or any other keys related to login 
+credentials
+ 
+ // Redirect to the login page
+ window.location.href = 'login.html';
+ } else {
+ // If the user cancels, do nothing
+ return;
+ }
+ }
+ 
+ </script>
+</body>
+</html>
+
+   

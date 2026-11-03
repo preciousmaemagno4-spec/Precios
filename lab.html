@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Student Loop Challenge</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Quicksand', Arial, sans-serif;
+            background:
+                radial-gradient(circle at 10% 10%, rgba(255, 255, 255, 0.8) 0%, transparent 50%),
+                radial-gradient(circle at 90% 10%, rgba(255, 255, 255, 0.6) 0%, transparent 45%),
+                linear-gradient(135deg, #ffe6f2, #e6e6ff, #f3e5ff);
+            margin: 0;
+            padding: 30px;
+            color: #4a148c;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Soft floating butterfly decorations */
+        .butterfly {
+            position: fixed;
+            width: 50px;
+            height: 50px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.95), rgba(230, 230, 255, 0.9));
+            border-radius: 50%;
+            box-shadow:
+                0 15px 35px rgba(155, 77, 202, 0.25),
+                inset 0 -8px 15px rgba(255, 255, 255, 0.8);
+            animation: floatButterfly 18s ease-in-out infinite;
+            z-index: 0;
+        }
+
+        .butterfly:nth-child(1) {
+            top: 8%;
+            left: 5%;
+            animation-delay: 0s;
+        }
+
+        .butterfly:nth-child(2) {
+            top: 15%;
+            right: 8%;
+            width: 35px;
+            height: 35px;
+            animation-delay: 3s;
+        }
+
+        .butterfly:nth-child(3) {
+            bottom: 10%;
+            left: 10%;
+            width: 45px;
+            height: 45px;
+            animation-delay: 6s;
+        }
+
+        .butterfly:nth-child(4) {
+            bottom: 5%;
+            right: 5%;
+            width: 30px;
+            height: 30px;
+            animation-delay: 9s;
+        }
+
+        @keyframes floatButterfly {
+            0% {
+                transform: translateY(0) translateX(0) rotate(0deg);
+            }
+            25% {
+                transform: translateY(-25px) translateX(15px) rotate(8deg);
+            }
+            50% {
+                transform: translateY(-10px) translateX(-10px) rotate(-8deg);
+            }
+            75% {
+                transform: translateY(-30px) translateX(10px) rotate(5deg);
+            }
+            100% {
+                transform: translateY(0) translateX(0) rotate(0deg);
+            }
+        }
+
+        /* Main container with 3D card effect */
+        .container {
+            max-width: 700px;
+            margin: auto;
+            background: rgba(255, 255, 255, 0.85);
+            padding: 30px;
+            border-radius: 24px;
+            box-shadow:
+                0 20px 45px rgba(155, 77, 202, 0.2),
+                0 8px 18px rgba(0, 0, 0, 0.08),
+                inset 0 1px 0 rgba(255, 255, 255, 0.9);
+            position: relative;
+            z-index: 1;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.7);
+        }
+
+        h1 {
+            text-align: center;
+            color: #9b4dca;
+            margin-bottom: 25px;
+            font-weight: 700;
+            font-size: 1.8rem;
+            text-shadow: 0 2px 8px rgba(155, 77, 202, 0.15);
+        }
+
+        h2 {
+            color: #d63384;
+            border-bottom: 2px solid #f3a6c8;
+            padding-bottom: 8px;
+            font-weight: 600;
+        }
+
+        h3 {
+            color: #7b2cbf;
+            background: linear-gradient(135deg, #f3e5f5, #e8d5ff);
+            padding: 12px 16px;
+            border-radius: 12px;
+            font-weight: 600;
+            box-shadow:
+                0 4px 12px rgba(123, 44, 191, 0.15),
+                inset 0 1px 0 rgba(255, 255, 255, 0.8);
+            margin-top: 30px;
+        }
+
+        .info {
+            background: linear-gradient(135deg, #fff0f6, #ffe6f2);
+            padding: 18px;
+            border-radius: 16px;
+            margin-bottom: 20px;
+            line-height: 1.8;
+            box-shadow:
+                0 8px 20px rgba(214, 51, 132, 0.15),
+                inset 0 1px 0 rgba(255, 255, 255, 0.9);
+        }
+
+        .output {
+            background: linear-gradient(135deg, #faf5ff, #f3e8ff);
+            padding: 18px;
+            margin-bottom: 20px;
+            border-radius: 16px;
+            border-left: 5px solid #c77dff;
+            box-shadow:
+                0 8px 20px rgba(199, 125, 255, 0.15),
+                inset 0 1px 0 rgba(255, 255, 255, 0.9);
+        }
+
+        .number {
+            display: inline-block;
+            background: linear-gradient(135deg, #e0aaff, #c77dff);
+            color: #4a148c;
+            padding: 6px 10px;
+            margin: 4px;
+            border-radius: 10px;
+            font-weight: bold;
+            box-shadow:
+                0 4px 10px rgba(155, 77, 202, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.8);
+        }
+
+        footer {
+            text-align: center;
+            color: #888;
+            margin-top: 30px;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            body {
+                padding: 18px;
+            }
+
+            .container {
+                padding: 22px;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .butterfly {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 3D Butterfly Decorations -->
+    <div class="butterfly"></div>
+    <div class="butterfly"></div>
+    <div class="butterfly"></div>
+    <div class="butterfly"></div>
+
+    <div class="container">
+        <h1>🦋 My Student Loop Challenge</h1>
+
+        <div class="info">
+            <strong>Personal Information</strong><br>
+            <span id="personalInfo"></span>
+        </div>
+
+        <div class="output">
+            <h3>Number Range</h3>
+            <span id="numberRange"></span>
+        </div>
+
+        <div class="output">
+            <h3>My Name</h3>
+            <span id="myName"></span>
+        </div>
+
+        <div class="output">
+            <h3>Countdown</h3>
+            <span id="countdown"></span>
+        </div>
+
+        <div class="output">
+            <h3>My Program</h3>
+            <span id="myProgram"></span>
+        </div>
+
+        <div class="output">
+            <h3>Levels</h3>
+            <span id="levels"></span>
+        </div>
+
+        <div class="output">
+            <h3>My Message</h3>
+            <span id="myMessage"></span>
+        </div>
+
+        <footer>
+            Designed with 💜 by Precious Mae Magno
+        </footer>
+    </div>
+
+    <script>
+        // PERSONAL INFORMATION
+        let name = "Precios Mae Magno";
+        let program = "BSIT";
+        let year = 2;
+        let section = "A";
+
+        // DISPLAY PERSONAL INFORMATION
+        document.getElementById("personalInfo").innerHTML =
+            "Name: " + name + "<br>" +
+            "Program: " + program + "<br>" +
+            "Year: " + year + "<br>" +
+            "Section: " + section + "<br><br>";
+
+        // FOR LOOP - NUMBER RANGE
+        let numberRangeOutput = "";
+        for (let i = 1; i <= 50; i++) {
+            numberRangeOutput += "<span class='number'>" + i + "</span>";
+        }
+        document.getElementById("numberRange").innerHTML = numberRangeOutput;
+
+        // FOR LOOP - NAME
+        let nameOutput = "";
+        for (let i = 1; i <= 50; i++) {
+            nameOutput += name + "<br>";
+        }
+        document.getElementById("myName").innerHTML = nameOutput;
+
+        // WHILE LOOP - COUNTDOWN
+        let countdownOutput = "";
+        let number = 50;
+        while (number >= 1) {
+            countdownOutput += "<span class='number'>" + number + "</span>";
+            number--;
+        }
+        document.getElementById("countdown").innerHTML = countdownOutput;
+
+        // WHILE LOOP - PROGRAM
+        let programOutput = "";
+        let count = 1;
+        while (count <= 5) {
+            programOutput += program + "<br>";
+            count++;
+        }
+        document.getElementById("myProgram").innerHTML = programOutput;
+
+        // DO...WHILE LOOP - LEVEL
+        let levelOutput = "";
+        let level = 1;
+        do {
+            levelOutput += "<span class='number'>" + level + "</span>";
+            level++;
+        } while (level <= 50);
+        document.getElementById("levels").innerHTML = levelOutput;
+
+        // DO...WHILE LOOP - MESSAGE
+        let messageOutput = "";
+        let repeat = 1;
+        do {
+            messageOutput += "I am a " + program + " student!<br>";
+            repeat++;
+        } while (repeat <= 5);
+        document.getElementById("myMessage").innerHTML = messageOutput;
+    </script>
+
+</body>
+</html>

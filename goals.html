@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>My Goals as a Student</title>
+ <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ <header>
+ <h1>Welcome to My Personal Website</h1>
+ </header>
+ <nav>
+ <ul>
+ <li><a href="index.html">HOME</a></li>
+ <li class="dropdown">
+ <a href="#" class="dropbtn">ABOUT</a>
+ <div class="dropdown-content">
+ <a href="skills.html">Skills I'm Developing</a>
+ <a href="goals.html">My Goals as a Student</a>
+ <a href="funfacts.html">Fun Facts About Me</a>
+ </div>
+ </li>
+ <li><a href="gallery.html">GALLERY</a></li>
+ <li><a href="contact.html">CONTACT</a></li>
+ <a href="javascript:void(0);" class="logout-button" onclick="confirmLogout()">LOG 
+OUT</a>
+ </ul>
+ </nav>
+ <section id="section2"></section>
+ <section id="drop">
+ <h2>My Goals as a Student</h2>
+ <p style="text-align: center;">As a student, I have simple but important goals that guide me every day. My first goal is to do my best in my studies and learn as much as I can, not just to get high grades, but to build a strong foundation for my future. I want to understand what I learn, not just finish my requirements.
+</p>
+ 
+ <div class="goal-grid">
+ <div class="goal-card" onclick="toggleGoalDetails(1)">
+ <div class="goal-header" style="background-color: 
+#6a1b9a;"><strong>Short-Term Goals</strong></div>
+ <div class="goal-details" id="goal1-details">
+ <p>My short-term goals focus on what I can do right now to make steady progress. First, I aim to submit all my assignments on time and complete my school projects with care. I want to understand every lesson well instead of just finishing them quickly.</p>
+ </div>
+ </div>
+ 
+ <div class="goal-card" onclick="toggleGoalDetails(1)">
+ <div class="goal-header" style="background-color: #0288d1;"><strong>LongTerm Goals</strong></div>
+ <div class="goal-details" id="goal2-details">
+ <p>My long-term goals are what I am working toward in the future. First and most importantly, I aim to finish my studies and graduate with the knowledge and skills I need for my chosen career. I want to build a stable and meaningful job that I can be proud of.
+</p></p>
+ </div>
+ </div>
+ 
+ <div class="goal-card" onclick="toggleGoalDetails(2)">
+ <div class="goal-header" style="background-color: 
+#ffb300;"><strong>Personal Development</strong></div>
+ <p>Investing in Myself: My Personal Development Journey</p>
+ <div class="goal-details" id="goal3-details">
+ <p> My personal development is about growing into a better version of myself every day. It is not just about learning new skills, but also building good habits, positive values, and confidence. As a student, I am learning to be more disciplined, responsible, and kind. I understand that growing as a person takes time and effort, but every small step I take now helps me become the person I want to be in the future.</p>
+   </div>
+ </div>
+ 
+ <div class="goal-card" onclick="toggleGoalDetails(2)">
+ <div class="goal-header" style="background-color: 
+#e53935;"><strong>Career Goals</strong></div>
+ <p>As a student, my career goals serve as my guide and motivation. My main goal is to build a career in the field of Information Technology. I want to grow my skills in web development, design, and digital solutions so I can work in a field that I enjoy and that challenges me to keep learning.
+ </p>
+ <div class="goal-details" id="goal4-details">
+ <p>My career goals are the vision that drives me to do my best every day. First, I aim to build a successful career in the field of Information Technology. I want to develop my skills, learn continuously, and become competent in what I do. I hope to work in an environment where I can grow, contribute meaningfully, and keep improving.</p>
+ </div>
+ </div>
+ </div>
+ </section>
+ </section>
+ 
+ <footer>
+ <p>&copy; 2024 Your Name. All rights reserved.</p>
+ </footer>
+ <div class="footer-divider"></div> <!-- Orange line -->
+ <script>
+ // Function to toggle details for both cards in a row
+ function toggleGoalDetails(group) {
+ const details1 = document.getElementById('goal' + (group * 2 - 1) + '-details');
+ const details2 = document.getElementById('goal' + (group * 2) + '-details');
+ // Toggle visibility for the paired goals
+ details1.classList.toggle('active');
+ details2.classList.toggle('active');
+ }
+ </script>
+<script>
+ // Logout function with confirmation
+ function confirmLogout() {
+ // Show a confirmation message to the user
+ const confirmLogout = confirm("Are you sure you want to log out?");
+ 
+ // If the user confirms, proceed with logging out
+ if (confirmLogout) {
+ // Mark the user as logged out in localStorage (if used)
+ localStorage.removeItem('isLoggedIn'); // Or any other keys related to login 
+credentials
+ 
+ // Redirect to the login page
+ window.location.href = 'login.html';
+ } else {
+ // If the user cancels, do nothing
+ return;
+ }
+ }
+ 
+ </script>
+</body>
+</html>

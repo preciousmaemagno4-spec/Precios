@@ -1,0 +1,863 @@
+/* Basic Reset */
+
+- {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  }
+
+/* Body Styling — 3D Pink Milk Tea Aurora */
+body {
+font-family: 'Quicksand', 'Trebuchet MS', sans-serif;
+margin: 0;
+padding: 0;
+background:
+radial-gradient(ellipse at top left, rgba(255, 182, 193, 0.35) 0%, transparent 55%),
+radial-gradient(ellipse at top right, rgba(232, 199, 181, 0.35) 0%, transparent 55%),
+radial-gradient(ellipse at center, rgba(255, 218, 225, 0.35) 0%, transparent 60%),
+radial-gradient(ellipse at bottom left, rgba(210, 180, 140, 0.25) 0%, transparent 55%),
+radial-gradient(ellipse at bottom right, rgba(255, 192, 203, 0.3) 0%, transparent 55%),
+linear-gradient(180deg, #FFF8F5, #FCE7ED, #F1DFD2, #F8E8E0);
+background-size: 250% 250%, 250% 250%, 200% 200%, 250% 250%, 250% 250%, 100% 100%;
+animation: auroraFlow 15s ease-in-out infinite;
+color: #654B43;
+padding-top: 130px;
+}
+
+@keyframes auroraFlow {
+0%   { background-position: 0% 0%, 100% 0%, 50% 50%, 0% 100%, 100% 100%, 0% 0%; }
+25%  { background-position: 20% 15%, 80% 10%, 60% 45%, 15% 85%, 85% 75%, 0% 0%; }
+50%  { background-position: 40% 25%, 60% 15%, 50% 55%, 25% 75%, 75% 85%, 0% 0%; }
+75%  { background-position: 20% 15%, 80% 10%, 40% 45%, 15% 85%, 85% 75%, 0% 0%; }
+100% { background-position: 0% 0%, 100% 0%, 50% 50%, 0% 100%, 100% 100%, 0% 0%; }
+}
+
+/* Header — 3D Pink Milk Tea Gradient */
+header {
+background: linear-gradient(90deg, #D98CA3, #F0B7C7, #C49A7A, #D98CA3);
+background-size: 300% 100%;
+animation: headerGlow 8s ease infinite;
+color: #FFFFFF;
+padding: 15px;
+text-align: center;
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+z-index: 999;
+font-family: 'Quicksand', sans-serif;
+box-shadow:
+0 5px 20px rgba(190, 120, 140, 0.25),
+0 0 35px rgba(217, 140, 163, 0.18),
+inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+@keyframes headerGlow {
+0% { background-position: 0% 50%; }
+50% { background-position: 100% 50%; }
+100% { background-position: 0% 50%; }
+}
+
+header h1 {
+font-weight: 700;
+font-size: 22px;
+text-shadow: 0 2px 8px rgba(101, 75, 67, 0.2);
+}
+
+/* Navigation — Pink Milk Tea Glass */
+nav {
+position: fixed;
+top: 70px;
+left: 0;
+width: 100%;
+z-index: 998;
+background-color: rgba(255, 248, 245, 0.88);
+backdrop-filter: blur(18px);
+-webkit-backdrop-filter: blur(18px);
+border-bottom: 1px solid rgba(217, 140, 163, 0.25);
+box-shadow:
+0 5px 18px rgba(166, 112, 104, 0.12),
+inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+nav ul {
+list-style-type: none;
+padding: 0;
+margin: 0;
+display: flex;
+justify-content: center;
+flex-wrap: wrap;
+}
+
+nav ul li {
+margin: 0;
+}
+
+nav ul li a {
+text-decoration: none;
+color: #795747;
+font-weight: 600;
+padding: 15px 20px;
+display: block;
+font-size: 17px;
+transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+background: linear-gradient(90deg, rgba(217, 140, 163, 0.18), rgba(196, 154, 122, 0.16));
+color: #C16F8B;
+}
+
+/* Dropdown — Milk Tea Glass */
+.dropdown {
+position: relative;
+}
+
+.dropdown-content {
+display: none;
+position: absolute;
+top: 100%;
+left: 0;
+background-color: rgba(255, 248, 245, 0.96);
+backdrop-filter: blur(20px);
+-webkit-backdrop-filter: blur(20px);
+border: 1px solid rgba(217, 140, 163, 0.25);
+box-shadow:
+0 10px 25px rgba(166, 112, 104, 0.18),
+0 0 25px rgba(217, 140, 163, 0.08);
+min-width: 200px;
+z-index: 1000;
+border-radius: 0 0 12px 12px;
+overflow: hidden;
+}
+
+.dropdown-content a {
+color: #795747;
+padding: 12px 20px;
+text-decoration: none;
+display: block;
+font-size: 15px;
+border-bottom: 1px solid rgba(196, 154, 122, 0.15);
+}
+
+.dropdown-content a:hover {
+background-color: rgba(217, 140, 163, 0.15);
+color: #C16F8B;
+}
+
+.dropdown:hover .dropdown-content {
+display: block;
+}
+
+.dropdown:hover .dropbtn {
+background: linear-gradient(90deg, rgba(217, 140, 163, 0.18), rgba(196, 154, 122, 0.16));
+color: #C16F8B;
+}
+
+/* Logout Button — Pink Accent */
+.logout-button {
+background-color: rgba(217, 140, 163, 0.13);
+color: #B56D83 !important;
+padding: 15px 20px !important;
+font-weight: 700;
+transition: all 0.3s ease;
+}
+
+.logout-button:hover {
+background-color: rgba(217, 140, 163, 0.25);
+color: #91566A !important;
+}
+
+/* Section Base — 3D Glass Cards */
+section {
+padding: 30px;
+margin: 20px auto;
+max-width: 1200px;
+background: linear-gradient(
+135deg,
+rgba(255, 255, 255, 0.68),
+rgba(255, 240, 245, 0.5),
+rgba(232, 199, 181, 0.25)
+);
+backdrop-filter: blur(16px);
+-webkit-backdrop-filter: blur(16px);
+border: 1px solid rgba(255, 255, 255, 0.8);
+border-radius: 16px;
+box-shadow:
+0 8px 25px rgba(166, 112, 104, 0.12),
+0 0 25px rgba(217, 140, 163, 0.08),
+inset 0 1px 0 rgba(255, 255, 255, 0.85);
+}
+
+#section2 {
+background: transparent;
+box-shadow: none;
+border: none;
+padding: 0;
+margin: 0;
+}
+
+/* Hero Section (#drop) — Pink Milk Tea Text */
+#drop h2 {
+text-align: center;
+margin-bottom: 20px;
+font-size: 2.5rem;
+background: linear-gradient(90deg, #C87591, #E8A9B8, #C49A7A, #A8795D);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+filter: drop-shadow(0 4px 10px rgba(217, 140, 163, 0.2));
+}
+
+#drop p {
+text-align: center;
+font-size: 1.1rem;
+color: #795747;
+max-width: 800px;
+margin: 0 auto 30px;
+}
+
+/* See More Button — 3D Pink Glow */
+.see-more-container {
+text-align: center;
+margin-top: 20px;
+}
+
+.see-more-button {
+display: inline-block;
+padding: 12px 30px;
+background: linear-gradient(120deg, #D98CA3, #F0B7C7, #D6B096, #B98B70);
+background-size: 200% 100%;
+animation: buttonGlow 4s ease infinite;
+color: #FFFFFF;
+text-decoration: none;
+border-radius: 30px;
+font-size: 1.1rem;
+font-weight: 600;
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+box-shadow:
+0 5px 0 #B77B8E,
+0 9px 20px rgba(190, 120, 140, 0.2),
+inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+@keyframes buttonGlow {
+0% { background-position: 0% 50%; }
+50% { background-position: 100% 50%; }
+100% { background-position: 0% 50%; }
+}
+
+.see-more-button:hover {
+transform: translateY(-3px);
+box-shadow:
+0 8px 0 #B77B8E,
+0 14px 25px rgba(217, 140, 163, 0.28),
+0 0 25px rgba(196, 154, 122, 0.18);
+}
+
+/* Footer — Pink Milk Tea Divider */
+.footer-divider {
+height: 4px;
+background: linear-gradient(90deg, #D98CA3, #F0B7C7, #C49A7A, #E8A9B8, #D98CA3);
+background-size: 400% 100%;
+animation: auroraDivider 6s ease infinite;
+width: 100%;
+margin: 30px 0 0;
+}
+
+@keyframes auroraDivider {
+0% { background-position: 0% 50%; }
+50% { background-position: 100% 50%; }
+100% { background-position: 0% 50%; }
+}
+
+footer {
+background-color: rgba(255, 248, 245, 0.92);
+color: #795747;
+text-align: center;
+padding: 20px;
+margin-top: 30px;
+border-top: 1px solid rgba(217, 140, 163, 0.25);
+box-shadow: 0 -5px 20px rgba(166, 112, 104, 0.08);
+}
+
+/* Image Slider — 3D Glass */
+.slider {
+width: 100%;
+position: relative;
+overflow: hidden;
+border-radius: 16px;
+border: 1px solid rgba(255, 255, 255, 0.8);
+box-shadow:
+0 10px 28px rgba(166, 112, 104, 0.18),
+0 0 30px rgba(217, 140, 163, 0.1);
+}
+
+.slides {
+display: flex;
+transition: transform 0.5s ease;
+}
+
+.slide {
+min-width: 100%;
+position: relative;
+}
+
+.slides img {
+width: 100%;
+height: 500px;
+object-fit: cover;
+}
+
+.text-overlay {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+text-align: center;
+padding: 20px 40px;
+background: rgba(255, 248, 245, 0.7);
+backdrop-filter: blur(14px);
+-webkit-backdrop-filter: blur(14px);
+border: 1px solid rgba(255, 255, 255, 0.8);
+border-radius: 12px;
+box-shadow:
+0 10px 25px rgba(166, 112, 104, 0.15),
+inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.text-overlay h1 {
+font-size: 3rem;
+color: #795747;
+text-shadow: 0 3px 10px rgba(217, 140, 163, 0.25);
+font-weight: 700;
+}
+
+/* Funfact Flip Cards — Pink Milk Tea */
+.funfacts-section {
+padding: 30px;
+margin: 20px auto;
+max-width: 1200px;
+background: rgba(255, 248, 245, 0.55);
+backdrop-filter: blur(14px);
+-webkit-backdrop-filter: blur(14px);
+border: 1px solid rgba(255, 255, 255, 0.8);
+border-radius: 16px;
+box-shadow:
+0 8px 25px rgba(166, 112, 104, 0.12),
+inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.funfact-container {
+display: flex;
+flex-wrap: wrap;
+gap: 25px;
+justify-content: center;
+padding: 20px 0;
+}
+
+.funfact-card {
+width: 280px;
+height: 200px;
+perspective: 1000px;
+}
+
+.funfact-inner {
+width: 100%;
+height: 100%;
+position: relative;
+transition: transform 0.6s ease;
+transform-style: preserve-3d;
+}
+
+.funfact-card:hover .funfact-inner {
+transform: rotateY(180deg);
+}
+
+.funfact-front, .funfact-back {
+position: absolute;
+width: 100%;
+height: 100%;
+backface-visibility: hidden;
+display: flex;
+align-items: center;
+justify-content: center;
+padding: 20px;
+border-radius: 16px;
+text-align: center;
+font-size: 1.1rem;
+font-weight: 600;
+border: 1px solid rgba(255, 255, 255, 0.65);
+}
+
+.funfact-front {
+background: linear-gradient(135deg, #D98CA3, #F0B7C7, #C49A7A);
+color: #FFFFFF;
+box-shadow:
+0 8px 20px rgba(190, 120, 140, 0.25),
+inset 0 1px 0 rgba(255, 255, 255, 0.55);
+}
+
+.funfact-back {
+background: linear-gradient(135deg, #C49A7A, #E8C7B5, #A8795D);
+color: #FFFFFF;
+transform: rotateY(180deg);
+box-shadow:
+0 8px 20px rgba(166, 112, 104, 0.22),
+inset 0 1px 0 rgba(255, 255, 255, 0.45);
+}
+
+/* Intro Container — Milk Tea Gradient */
+.container {
+display: flex;
+flex-wrap: wrap;
+gap: 40px;
+justify-content: center;
+align-items: center;
+max-width: 1200px;
+margin: 20px auto;
+padding: 40px 30px;
+background: linear-gradient(135deg, rgba(255, 240, 245, 0.65), rgba(232, 199, 181, 0.35));
+backdrop-filter: blur(14px);
+-webkit-backdrop-filter: blur(14px);
+border: 1px solid rgba(255, 255, 255, 0.8);
+border-radius: 16px;
+box-shadow:
+0 8px 25px rgba(166, 112, 104, 0.12),
+inset 0 1px 0 rgba(255, 255, 255, 0.85);
+}
+
+.image-section img {
+max-width: 100%;
+width: 350px;
+border-radius: 16px;
+border: 2px solid rgba(255, 255, 255, 0.8);
+box-shadow:
+0 8px 22px rgba(166, 112, 104, 0.2),
+0 0 20px rgba(217, 140, 163, 0.12);
+}
+
+.quote-section {
+flex: 1;
+min-width: 300px;
+}
+
+.quote-section h1 {
+font-size: 2rem;
+color: #795747;
+margin-bottom: 15px;
+text-shadow: 0 3px 8px rgba(217, 140, 163, 0.15);
+}
+
+.quote-section p {
+font-size: 1rem;
+line-height: 1.7;
+color: #795747;
+margin-bottom: 20px;
+}
+
+.quote-section blockquote {
+padding: 20px 30px;
+border-top: 2px solid #D98CA3;
+border-bottom: 2px solid #C49A7A;
+color: #8C6470;
+font-style: italic;
+font-size: 1.1rem;
+text-align: center;
+box-shadow: inset 0 0 20px rgba(217, 140, 163, 0.08);
+border-radius: 10px;
+}
+
+/* Skills Section & Tabs — Pink Milk Tea Theme */
+#skills {
+background: linear-gradient(135deg, rgba(255, 240, 245, 0.55), rgba(232, 199, 181, 0.25));
+}
+
+.tab {
+display: flex;
+flex-wrap: wrap;
+gap: 10px;
+margin-bottom: 20px;
+}
+
+.tab button {
+background: rgba(255, 255, 255, 0.4);
+border: 2px solid #D98CA3;
+color: #B56D83;
+cursor: pointer;
+padding: 12px 24px;
+border-radius: 30px;
+font-size: 1rem;
+font-weight: 600;
+transition: all 0.3s ease;
+box-shadow: 0 3px 8px rgba(217, 140, 163, 0.1);
+}
+
+.tab button:hover {
+background: linear-gradient(90deg, #D98CA3, #E8A9B8);
+color: #FFFFFF;
+border-color: transparent;
+box-shadow: 0 5px 15px rgba(217, 140, 163, 0.25);
+}
+
+.tab button.active {
+background: linear-gradient(90deg, #D98CA3, #C49A7A);
+color: #FFFFFF;
+border-color: transparent;
+box-shadow: 0 5px 15px rgba(190, 120, 140, 0.25);
+}
+
+.tabcontent {
+display: none;
+padding: 25px;
+background: rgba(255, 255, 255, 0.45);
+backdrop-filter: blur(12px);
+-webkit-backdrop-filter: blur(12px);
+border-radius: 12px;
+border: 1px solid rgba(255, 255, 255, 0.8);
+box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+.tabcontent h3 {
+color: #B56D83;
+margin-bottom: 15px;
+text-shadow: 0 3px 8px rgba(217, 140, 163, 0.15);
+}
+
+.tabcontent ul {
+padding-left: 20px;
+line-height: 1.8;
+color: #795747;
+}
+
+/* Goal Cards — Pink Milk Tea Gradients */
+.goal-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+gap: 20px;
+padding: 10px;
+}
+
+.goal-card {
+background: rgba(255, 255, 255, 0.5);
+backdrop-filter: blur(12px);
+-webkit-backdrop-filter: blur(12px);
+border: 1px solid rgba(255, 255, 255, 0.85);
+border-radius: 16px;
+box-shadow:
+0 6px 18px rgba(166, 112, 104, 0.12),
+inset 0 1px 0 rgba(255, 255, 255, 0.8);
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+padding: 0;
+cursor: pointer;
+overflow: hidden;
+}
+
+.goal-card:hover {
+transform: translateY(-5px);
+box-shadow:
+0 12px 28px rgba(190, 120, 140, 0.2),
+0 0 25px rgba(217, 140, 163, 0.1);
+}
+
+.goal-header {
+padding: 15px 20px;
+color: #FFFFFF;
+font-weight: 700;
+font-size: 1.1rem;
+text-shadow: 0 1px 3px rgba(101, 75, 67, 0.2);
+}
+
+.goal-card:nth-child(1) .goal-header { background: linear-gradient(90deg, #D98CA3, #E8A9B8); }
+.goal-card:nth-child(2) .goal-header { background: linear-gradient(90deg, #C49A7A, #D6B096); }
+.goal-card:nth-child(3) .goal-header { background: linear-gradient(90deg, #E8A9B8, #F0B7C7); }
+.goal-card:nth-child(4) .goal-header { background: linear-gradient(90deg, #B98B70, #D6B096); }
+
+.goal-card > p {
+padding: 15px 20px 0;
+font-weight: 600;
+color: #795747;
+}
+
+.goal-details {
+padding: 0 20px 20px;
+display: none;
+line-height: 1.6;
+color: #795747;
+}
+
+.goal-details.active {
+display: block;
+animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+from { opacity: 0; transform: translateY(10px); }
+to { opacity: 1; transform: translateY(0); }
+}
+
+/* Gallery — Pink Milk Tea Text */
+#gallery h2 {
+text-align: center;
+margin-bottom: 30px;
+font-size: 2.5rem;
+background: linear-gradient(90deg, #C87591, #E8A9B8, #C49A7A, #A8795D);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+filter: drop-shadow(0 4px 10px rgba(217, 140, 163, 0.2));
+}
+
+.gallery {
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+gap: 25px;
+}
+
+.gallery-item {
+text-align: center;
+width: 280px;
+}
+
+.gallery img {
+width: 100%;
+height: 200px;
+object-fit: cover;
+border-radius: 12px;
+cursor: pointer;
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+border: 2px solid rgba(255, 255, 255, 0.85);
+box-shadow: 0 5px 15px rgba(166, 112, 104, 0.12);
+}
+
+.gallery img:hover {
+transform: scale(1.05) translateY(-3px);
+box-shadow:
+0 10px 25px rgba(190, 120, 140, 0.25),
+0 0 25px rgba(217, 140, 163, 0.15);
+}
+
+.image-description {
+margin-top: 10px;
+color: #795747;
+font-size: 0.95rem;
+}
+
+/* Lightbox — Pink Milk Tea Space */
+.lightbox {
+display: none;
+position: fixed;
+z-index: 2000;
+inset: 0;
+background-color: rgba(55, 35, 40, 0.94);
+backdrop-filter: blur(15px);
+-webkit-backdrop-filter: blur(15px);
+align-items: center;
+justify-content: center;
+}
+
+.lightbox-content {
+display: block;
+max-width: 85%;
+max-height: 80vh;
+margin: 0;
+border-radius: 12px;
+border: 2px solid rgba(255, 255, 255, 0.65);
+box-shadow:
+0 0 35px rgba(217, 140, 163, 0.3),
+0 0 70px rgba(196, 154, 122, 0.18);
+}
+
+.prev, .next {
+cursor: pointer;
+position: absolute;
+top: 50%;
+transform: translateY(-50%);
+width: 48px;
+height: 48px;
+display: flex;
+align-items: center;
+justify-content: center;
+color: #FFFFFF;
+font-weight: bold;
+font-size: 22px;
+background: linear-gradient(135deg, #D98CA3, #C49A7A);
+border: 1px solid rgba(255, 255, 255, 0.6);
+border-radius: 50%;
+z-index: 2002;
+user-select: none;
+transition: all 0.3s ease;
+box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.prev:hover, .next:hover {
+background: linear-gradient(135deg, #C87591, #A8795D);
+box-shadow: 0 0 20px rgba(217, 140, 163, 0.4);
+}
+
+.prev { left: 20px; }
+.next { right: 20px; }
+
+/* Contact Page — Pink Milk Tea Aurora */
+.contact-background {
+background:
+radial-gradient(ellipse at top left, rgba(255, 182, 193, 0.3) 0%, transparent 55%),
+radial-gradient(ellipse at top right, rgba(232, 199, 181, 0.3) 0%, transparent 55%),
+radial-gradient(ellipse at bottom left, rgba(217, 140, 163, 0.2) 0%, transparent 55%),
+radial-gradient(ellipse at bottom right, rgba(196, 154, 122, 0.2) 0%, transparent 55%),
+linear-gradient(180deg, #FFF8F5, #FCE7ED, #EAD5C5);
+min-height: 100vh;
+background-size: 250% 250%, 250% 250%, 250% 250%, 250% 250%, 100% 100%;
+animation: auroraFlow 15s ease-in-out infinite;
+}
+
+#contact {
+max-width: 1000px;
+margin: 20px auto !important;
+padding: 40px;
+}
+
+.contact-content {
+display: flex;
+flex-wrap: wrap;
+gap: 40px;
+}
+
+.contact-form {
+flex: 1;
+min-width: 300px;
+}
+
+.contact-form h2 {
+text-align: center;
+margin-bottom: 25px;
+font-size: 1.8rem;
+color: #B56D83;
+text-shadow: 0 3px 10px rgba(217, 140, 163, 0.2);
+}
+
+.contact-form label {
+font-weight: 600;
+color: #795747;
+margin-bottom: 5px;
+display: block;
+}
+
+.contact-form input,
+.contact-form textarea {
+width: 100%;
+padding: 14px 18px;
+margin-bottom: 5px;
+background: rgba(255, 255, 255, 0.6);
+border: 2px solid rgba(196, 154, 122, 0.3);
+border-radius: 12px;
+font-family: 'Quicksand', sans-serif;
+font-size: 1rem;
+color: #654B43;
+transition: border-color 0.3s ease, box-shadow 0.3s ease;
+box-shadow: inset 0 2px 5px rgba(166, 112, 104, 0.05);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+outline: none;
+border-color: #D98CA3;
+box-shadow:
+0 0 15px rgba(217, 140, 163, 0.25),
+inset 0 0 8px rgba(196, 154, 122, 0.05);
+}
+
+.contact-form textarea {
+min-height: 120px;
+resize: vertical;
+}
+
+.contact-form button {
+width: 100%;
+padding: 14px;
+background: linear-gradient(120deg, #D98CA3, #F0B7C7, #C49A7A);
+background-size: 200% 100%;
+animation: buttonGlow 4s ease infinite;
+color: #FFFFFF;
+border: none;
+border-radius: 30px;
+font-size: 1.1rem;
+font-weight: 700;
+cursor: pointer;
+margin-top: 10px;
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+box-shadow:
+0 5px 0 #B77B8E,
+0 9px 18px rgba(190, 120, 140, 0.2);
+}
+
+.contact-form button:hover {
+transform: translateY(-2px);
+box-shadow:
+0 7px 0 #B77B8E,
+0 13px 25px rgba(217, 140, 163, 0.3);
+}
+
+.error {
+color: #C75B70;
+font-size: 0.9rem;
+display: block;
+margin-bottom: 10px;
+min-height: 1.2rem;
+}
+
+.contact-details {
+flex: 0 0 320px;
+background: linear-gradient(
+135deg,
+rgba(255, 240, 245, 0.85),
+rgba(232, 199, 181, 0.65)
+);
+backdrop-filter: blur(16px);
+-webkit-backdrop-filter: blur(16px);
+border: 1px solid rgba(255, 255, 255, 0.85);
+color: #654B43;
+padding: 30px;
+border-radius: 16px;
+box-shadow:
+0 10px 28px rgba(166, 112, 104, 0.15),
+inset 0 1px 0 rgba(255, 255, 255, 0.85);
+}
+
+.contact-details h3 {
+text-align: center;
+margin-bottom: 25px;
+color: #B56D83;
+text-shadow: 0 3px 8px rgba(217, 140, 163, 0.15);
+}
+
+.contact-details p {
+margin: 15px 0;
+line-height: 1.6;
+color: #795747;
+}
+
+.contact-details hr {
+border: none;
+border-top: 1px solid rgba(196, 154, 122, 0.3);
+margin: 10px 0;
+}
+
+/* Title Border Box — Pink Milk Tea 3D */
+.title-border-box {
+display: inline-block;
+padding: 12px 35px;
+border-radius: 50px;
+background: rgba(255, 248, 245, 0.65);
+border: 2px solid transparent;
+background-image:
+linear-gradient(rgba(255, 248, 245, 0.85), rgba(255, 240, 245, 0.8)),
+linear-gradient(90deg, #D98CA3, #F0B7C7, #C49A7A, #E8A9B8, #D98CA3);
+background-origin: border-box;
+background-clip: padding-box, border-box;
+backdrop-filter: blur(12px);
+-webkit-backdrop-filter: blur(12px);
+box-shadow:
+0 8px 18px rgba(166, 112, 104, 0.12),
+0 0 20px rgba(217, 140, 163, 0.18),

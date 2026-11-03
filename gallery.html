@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Gallery - Personal Website</title>
+ <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ <header>
+ <h1>Welcome to My Personal Website</h1>
+ </header>
+ <nav>
+ <ul>
+ <li><a href="index.html">HOME</a></li>
+ <li class="dropdown">
+ <a href="#" class="dropbtn">ABOUT</a>
+ <div class="dropdown-content">
+ <a href="skills.html">Skills I'm Developing</a>
+ <a href="goals.html">My Goals as a Student</a>
+ <a href="funfacts.html">Fun Facts About Me</a>
+ </div>
+ </li>
+ <li><a href="gallery.html">GALLERY</a></li>
+ <li><a href="contact.html">CONTACT</a></li>
+ <a href="javascript:void(0);" class="logout-button" onclick="confirmLogout()">LOG 
+OUT</a>
+ </ul>
+ </nav>
+ <section id="section2"></section>
+<section id="gallery">
+  <h2>Gallery</h2>
+  <p style="text-align: center;">Check out some of the images from my recent photography:</p>
+  <div class="gallery">
+    <div class="gallery-item">
+      <img src="family.jpeg" alt="family.jpeg" class="thumbnail" onclick="openLightbox(0)">
+      <p class="image-description">myfamily</p>
+    </div>
+    <div class="gallery-item">
+      <img src="jowa.jpg" alt="jowa.jpg" class="thumbnail" onclick="openLightbox(1)">
+      <p class="image-description">myboyfriend</p>
+    </div>
+    <div class="gallery-item">
+      <img src="my girly.jpeg" alt="my girly.jpeg" class="thumbnail" onclick="openLightbox(2)">
+      <p class="image-description">mygirly</p>
+    </div>
+    <div class="gallery-item">
+      <img src="bunso.jpg" alt="bunso.jpg" class="thumbnail" onclick="openLightbox(3)">
+      <p class="image-description">bunso</p>
+    </div>
+    <div class="gallery-item">
+      <img src="ia.jpeg" alt="ia.jpeg" class="thumbnail" onclick="openLightbox(4)">
+      <p class="image-description">crackheads</p>
+    </div>
+    <div class="gallery-item">
+      <img src="me ah.jpeg" alt="me ah.jpeg" class="thumbnail" onclick="openLightbox(5)">
+      <p class="image-description">ako lang</p>
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox: OUTSIDE the section -->
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+  <span class="close" onclick="closeLightbox()">&times;</span>
+  <a class="prev" onclick="event.stopPropagation(); changeImage(-1)">&#10094;</a>
+  <img class="lightbox-content" id="lightboxImage" src="" alt="" onclick="event.stopPropagation()">
+  <a class="next" onclick="event.stopPropagation(); changeImage(1)">&#10095;</a>
+</div>
+ <script>
+ // Logout function with confirmation
+ function confirmLogout() {
+ // Show a confirmation message to the user
+ const confirmLogout = confirm("Are you sure you want to log out?");
+ 
+ // If the user confirms, proceed with logging out
+ if (confirmLogout) {
+ // Mark the user as logged out in localStorage (if used)
+ localStorage.removeItem('isLoggedIn'); // Or any other keys related to login 
+credentials
+ 
+ // Redirect to the login page
+ window.location.href = 'login.html';
+ } else {
+ // If the user cancels, do nothing
+ return;
+ }
+ }
+ </script>
+<script>
+let currentImageIndex = 0;
+const images = document.querySelectorAll('.thumbnail');
+const lightbox = document.getElementById('lightbox');
+const lightboxImage = document.getElementById('lightboxImage');
+
+function showImage(index) {
+  currentImageIndex = index;
+  lightboxImage.src = images[index].src;
+  lightboxImage.alt = images[index].alt;
+}
+
+function openLightbox(index) {
+  showImage(index);
+  lightbox.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+  lightbox.style.display = 'none';
+  document.body.style.overflow = '';
+}
+
+function changeImage(direction) {
+  let next = currentImageIndex + direction;
+  if (next < 0) next = images.length - 1;
+  if (next >= images.length) next = 0;
+  showImage(next);
+}
+
+document.addEventListener('keydown', (e) => {
+  if (lightbox.style.display !== 'flex') return;
+  if (e.key === 'Escape') closeLightbox();
+  if (e.key === 'ArrowLeft') changeImage(-1);
+  if (e.key === 'ArrowRight') changeImage(1);
+});
+</script>
+ <footer>
+ <p>&copy; 2024 Precios Mae Magno. All rights reserved.</p>
+ </footer>
+ <div class="footer-divider"></div>
+</body>
+</html>
